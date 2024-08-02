@@ -1,5 +1,5 @@
 <template>
-    <h1>testTesTtest</h1>
+    <h1>FooterComponent</h1>
 </template>
 
 <script>
