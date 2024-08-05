@@ -1,7 +1,0 @@
-<template>
-    <h1>testTesTtest</h1>
-</template>
-
-<script>
-export default{};
-</script>
