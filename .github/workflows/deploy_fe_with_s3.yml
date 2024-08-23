@@ -3,7 +3,7 @@ name: deply to aws s3
 on:
   push:
     branches:
-      - main
+      - main git remote add origin https://github.com/epiuwiruiw/deploy_fe.git
 jobs:
 # 워크플로우는 하나 이상의 작업(job)으로 구성. 여기서는 하나의 작업만을 정의
   build-and-deploy:
