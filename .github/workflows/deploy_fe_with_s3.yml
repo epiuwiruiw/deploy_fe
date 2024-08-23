@@ -42,4 +42,10 @@ jobs:
       # --recursive 파일안의 파일안의 파일안의 지우겠다 -> 모든 파일을 지우겠다.
         run: aws s3 rm s3://www.minji2276.shop/ --recursive
 
+      - name: deploy to s3
+        run: aws s3 cp ./dist s3://www.minji2276.shop/ --recursive
+
+      - name: invalidate cloudfront caches
+        run: aws cloudfront create-invalidation --distribution-id E2G2OS1FTG1KF6 --path "/*"
+
         
