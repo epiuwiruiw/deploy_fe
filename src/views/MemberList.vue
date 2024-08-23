@@ -22,19 +22,24 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            tableHeaders: [{ title: 'ID', key: 'id', align: 'start' },
+            tableHeaders: [
+                { title: 'ID', key: 'id', align: 'start' },
             { title: '이름', key: 'name', align: 'start' },
-            { title: '이메일', key: 'email', align: 'start' }],
+            { title: '이메일', key: 'email', align: 'start' },
+            { title: '주문수량', key: 'orderCount', align: 'start' }
+            ],
             memberList: []
         }
     },
     async created(){
-        const token = localStorage.getItem('token');
-        const headers = {"Authorization" : `Bearer ${token}`};
-        // {"headers":{"Authorization":"Bearer 토큰값"}}
-        const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/member/list`,{headers})
+        // const token = localStorage.getItem('token');
+        // const headers = {"Authorization" : `Bearer ${token}`};
+        // // {"headers":{"Authorization":"Bearer 토큰값"}}
+        // const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/member/list`,{headers})
+        const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/member/list`);
         console.log(response)
         this.memberList = response.data.result.content;
+            
     },
 };
 </script>
